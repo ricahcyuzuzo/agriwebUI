@@ -17,7 +17,9 @@ function Shop() {
     axios.get('http://agrirwanda.eu-4.evennode.com/api/products_approved')
       .then((res) => {
         setProducts(res.data.data);
-        console.log(res.data.data)
+        console.log(res.data.data);
+      }).catch((err) => {
+        console.log(err.response);
       });
   };
 
