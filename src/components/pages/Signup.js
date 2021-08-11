@@ -34,7 +34,7 @@ const SignupScreen = () => {
                 <Button variant='primary'
                 onClick={() => {
                     setLoading(!loading);
-                    axios.post('http://127.0.0.1:7000/api/user', {
+                    axios.post('http://agrirwanda.eu-4.evennode.com/api/user', {
                         fullNames,
                         phoneNumber,
                         password,

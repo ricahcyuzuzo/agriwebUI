@@ -39,7 +39,7 @@ const Checkout = () => {
                 <Form.Label>Email</Form.Label>
                 <Form.Control type='email' onChange={(e) => setEmail(e.target.value)}  placeholder='This will be used for payment' />
                 <Button onClick={() => {
-                    axios.post('http://127.0.0.1:7000/api/order', {
+                    axios.post('http://agrirwanda.eu-4.evennode.com/api/order', {
                         products: productss,
                         customerName: names,
                         customerAddress: address,

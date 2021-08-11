@@ -14,7 +14,7 @@ function Shop() {
   }, [])
 
   const getAllProductsApproved = () => {
-    axios.get('http://127.0.0.1:7000/api/products_approved')
+    axios.get('http://agrirwanda.eu-4.evennode.com/api/products_approved')
       .then((res) => {
         setProducts(res.data.data);
         console.log(res.data.data)

@@ -59,7 +59,7 @@ const AddProduct = () => {
                     formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
                     axios.post('https://api.cloudinary.com/v1_1/agri-rwanda/image/upload', formData)
                         .then(res => {
-                            axios.post('http://127.0.0.1:7000/api/product', {
+                            axios.post('http://agrirwanda.eu-4.evennode.com/api/product', {
                                 productName: name,
                                 pricePerUnit: price,
                                 availableQuantity: quantity,

@@ -31,7 +31,7 @@ const LoginScreen = () => {
                 <Button variant='primary' 
                 onClick={() => {
                     setLoading(!loading)
-                    axios.post('http://127.0.0.1:7000/api/login', {
+                    axios.post('http://agrirwanda.eu-4.evennode.com/api/login', {
                         phoneNumber,
                         password,
                     }).then((res) => {
