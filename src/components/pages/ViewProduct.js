@@ -1,79 +1,65 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import { FormControl, InputGroup } from 'react-bootstrap';
 import pic from '../images/big1.png';
 import './pages.css';
 import CartContext from '../../context/cartContext';
 import { Link } from 'react-router-dom';
-import Navbar from '../Navbar';
+import Navbar from '../Navbar2';
+import axios from 'axios'
 
 function ViewProduct() {
-    const [totalP, setTotalP] = useState('');
-    const [quantity, setQuantity] = useState('');
+    const [products, setProducts] = useState([]);
 
-    const {product, cart} = useContext(CartContext);
-    console.log(product)
+    useEffect(() => {
+        axios.get('http://agrirwanda.eu-4.evennode.com/api/seller_products', {params: {phoneNumber: window.localStorage.getItem('phone')}}).then((res) => {
+            setProducts(res.data.data);
+            console.log(res.data.data)
+        })
+    }, [])
 
     return(
         <>
         <Navbar />
-        <div className="container" style={{
+        <h1 style={{textAlign: 'center', marginTop: 20, marginBottom: 20}}>Products</h1>
+        <div style={{
             display: 'flex',
-            justifyContent: 'space-between',
-            marginTop: '100px',
-            flexDirection: 'row'
+            width: '90%',
+            marginTop: '60px',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            margin: 'auto',
+            paddingLeft: 100
         }}>
-            <div className="col1" style={{backgroundColor: 'black', borderRadius: 20,}}>
-                <img src={product.image} alt="product" style={{
-                    borderRadius: 20,
-                    width: 400,
-                    height: 350,
-                }} />
-            </div>
-            <div style={{
-                width: '50%',
-                wordWrap: 'normal',
-            }} className="col2">
-                <h1 style={{
-                    paddingBottom:'20px'
-                }}>{product.name}</h1>
-               {product.description}
-                <div style={{
-                    paddingTop: '30px',
-                }}>
-                <InputGroup className="mb-3">
-                    <FormControl aria-label="Quantity" placeholder="Quantity in Numbers" onChange={(val) => {
-                       const totalPrice = product.price * val.target.value
-                       setQuantity(val.target.value)
-                        setTotalP(totalPrice);
-                    }} />
-                    <InputGroup.Text>Kg * {product.price} Rwf</InputGroup.Text>
-                </InputGroup>
-                </div> 
-                <div>
-                <b>Price:</b> {totalP} Rwf
-                </div>
-                <div>
-                <Link to='/cart'><button  onClick={() => {
-                    cart.push({
-                        name: product.name,
-                        quantity: quantity,
-                        price: totalP,
-                        image: product.image
-                    });
-                    console.log(cart)
-                }} style={{
-                    width: '225px',
-                    height: '56px',
-                    backgroundColor: '#346B33',
-                    borderRadius: '5px',
-                    color: '#FEFEFE',
-                    fontWeight: 700,
-                    fontSize: '20px',
-                    marginTop: '30px',
-                    borderWidth: '0px'
-                }}>Add to Cart</button></Link>
-                </div>
-            </div>
+            {products.map((item, idx) => {
+                return (
+                    <Link key={idx} onClick={() => {
+                        window.localStorage.setItem('productName', item.productName);
+                    }} to='/farmers' style={{
+                        textDecorationLine: 'none',
+                        textDecorationColor: '#331974',
+                        marginRight: 40
+                    }}><div 
+                    className='shadow-lg p-3 mb-5 bg-body' style={{
+                        width: 200,
+                        height: 250,
+                        borderRadius: 20,
+                        textAlign: 'center',
+                        paddingTop: 20,
+                        cursor: 'pointer',
+                    }}>
+                        <img src={item.image} style={{
+                            width: 150,
+                            height: 150,
+                            borderRadius: 10,
+                        }} />
+                        <h4 style={{
+                            marginTop: 20,
+                            color: '#222222'
+                        }}>{item.productName}</h4>
+                        <span>{item.productCategory}</span>
+                    </div></Link>
+                )
+            })}
         </div>
         </>
     )

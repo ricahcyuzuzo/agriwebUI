@@ -28,7 +28,16 @@ const AddProduct = () => {
                     textAlign: 'center'
                 }}>Add Product</h1>
                 <Form.Label>Name</Form.Label>
-                <Form.Control type='text' minLength='2' onChange={(e) => setName(e.target.value)} />
+                <select className='form-control' onChange={(e) => setName(e.target.value)} >
+                    <option>Beans</option>
+                    <option>Yams</option>
+                    <option>Potatoes</option>
+                    <option>Mangoes</option>
+                    <option>Jack Fruits</option>
+                    <option>Tomatoes</option>
+                    <option>Cassava</option>
+                    <option>Mushrooms</option>
+                </select>
                 <Form.Label>Price Per Unit</Form.Label>
                 <Form.Control type='text' onChange={(e) => setPrice(e.target.value)} />
                 <Form.Label>Quantity in Kg</Form.Label>
@@ -70,7 +79,11 @@ const AddProduct = () => {
                             }).then((res) => {
                                 alert(res.data.message);
                                 history.push('/seller/product')
+                        
+                            }).catch(err => {
+                                console.log(err.response.data.message);
                             })
+                        
                         })
                         .catch(err => {
                             console.log(err.response);

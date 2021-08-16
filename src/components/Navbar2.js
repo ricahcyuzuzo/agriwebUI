@@ -1,12 +1,14 @@
 import { Navbar, Nav} from 'react-bootstrap';
-import { FiMail, FiShoppingCart } from 'react-icons/fi'
+import { FiMail } from 'react-icons/fi'
 import logo from './images/NavLogo.png';
 import '../App.css';
 import { Link } from 'react-router-dom';
 
-function Navbarr() {
+function Navbarr2() {
     return (
-        <Navbar expand="lg">
+        <Navbar style={{
+            backgroundColor: '#331974'
+        }} expand="lg">
             <Navbar.Brand href="#home" style={{paddingLeft: '10px'}}><img src={logo} alt="Logo" className="logo"/><b style={{fontSize: 20, color: '#fff'}}>Agri <font color="#8FDAB1">Web</font></b></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{marginTop: '30px'}} />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -22,4 +24,4 @@ function Navbarr() {
     );    
 }
 
-export default Navbarr;
+export default Navbarr2;

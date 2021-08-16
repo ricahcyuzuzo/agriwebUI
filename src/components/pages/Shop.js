@@ -5,49 +5,145 @@ import '../../App.css';
 import ProductRowOne from '../ProductRowOne';
 import ProductRowTwo from '../ProductRowTwo';
 import Navbar from '../Navbar';
+import {useHistory} from 'react-router-dom';
+import { Button, Form, Tab, Tabs } from 'react-bootstrap';
 
 function Shop() {
-  const [products, setProducts] = useState([])
+  const [fullNames, setFullNames] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
-  useEffect(() =>{
-    getAllProductsApproved();
-  }, [])
-
-  const getAllProductsApproved = () => {
-    axios.get('http://agrirwanda.eu-4.evennode.com/api/products_approved')
-      .then((res) => {
-        setProducts(res.data.data);
-        console.log(res.data.data);
-      }).catch((err) => {
-        console.log(err.response);
-      });
-  };
-
+  let history = useHistory();
+  
   return (
-    <div className="App">
+    <div className="App" style={{
+      backgroundColor: '#331974',
+      color: '#fff'
+    }}>
       <Navbar />
-      <CategoriesNavigation />
       <div style={{
-          display: 'flex',
+        height: '550px',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingLeft: '100px',
+        paddingRight: '100px',
+        marginTop: '100px',
       }}>
-      {products.map((item, idx) => {
-        return (
-          <ProductRowOne key={idx} seller={item.sellerIdentifier} image={item.image} name={item.productName} price={item.pricePerUnit} description={item.description} />
-        )
-      })}
-      </div>
-      <h3 style={{
-                marginTop: '40px',
-                paddingLeft: '40px',
-            }}>Popular <font color="#346B33">Products</font></h3>
-            <div style={{ 
-              display: 'flex',
+        <div style={{
+          width: '45%',
+          marginTop: 100
+        }}>
+          <h1 style={{
+            fontSize: 50
+          }}>The place where farmers gather and share.</h1>
+          <p style={{
+            marginTop: '20px'
+          }}>Join the agrirwanda forum to talk to farmers around the country and get knowledge from them.</p>
+        </div>
+        <div style={{
+        backgroundColor: '#fff',
+        width: '30%',
+        height: '400px',
+        borderRadius: 10,
+        }}>
+          <div>
+          <Button onClick={() => setIsLogin(true)} variant='primary' style={{
+              borderRadius: 0,
+              width: '50%'
+            }}>Login</Button>
+            <Button onClick={() => setIsLogin(false)} variant='light' style={{
+              borderRadius: 0,
+              width: '50%'
+            }}>SignUp</Button>
+          </div>
+          { isLogin ? <div>
+            <h2 style={{
+             color: '#000',
+             textAlign: 'center',
+             marginTop: '20px',
+             marginBottom: '20px'
+            }}>Sign in</h2>
+            <div style={{
+              marginLeft: 60,
             }}>
-      {products.map((item, idx) => {
-        return (
-          <ProductRowTwo key={idx} image={item.image} name={item.productName} price={item.pricePerUnit} />
-        )
-      })}
+            <Form.Control type='text' maxLength='10' onChange={(e) => setPhoneNumber(e.target.value)} minLength='10' placeholder='Phone' style={{
+              width: '80%'
+            }} />
+            <Form.Control type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} style={{
+              width: '80%',
+              marginTop: 10,
+              marginBottom: 10,
+            }} />
+            <span style={{
+              color: '#000',
+              marginLeft: 105,
+            }}>Forgot your Password?</span>
+            <Button onClick={() => {
+              setLoading(!loading);
+              axios.post('http://agrirwanda.eu-4.evennode.com/api/login', {
+                  phoneNumber,
+                  password,
+              }).then((res) => {
+                  window.localStorage.setItem('token', res.data.token);
+                  window.localStorage.setItem('isLoggedIn', true);
+                  history.push('/seller/home');
+              }).catch((err) => {
+                alert(err.response.data.message)
+              })
+            }} style={{
+              marginTop: 10,
+              width: '80%'
+            }} variant='success'>{loading ? 'Loading ...' : 'Login'}</Button>
+            </div>
+          </div> : <div style={{
+          }}>
+           <h2 style={{
+             color: '#000',
+             textAlign: 'center',
+             marginTop: '20px',
+             marginBottom: '20px'
+           }}>Sign up</h2>
+           <div style={{
+              marginLeft: 60,
+            }}>
+            <Form.Control type='text' placeholder='Names' onChange={(e) => setFullNames(e.target.value)} style={{
+              width: '80%'
+            }} />
+            <Form.Control type='text' placeholder='phone' onChange={(e) => setPhoneNumber(e.target.value)} maxLength='10' minLength='10' style={{
+              width: '80%',
+              marginTop: 10,
+            }} />
+            <Form.Control type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)}  style={{
+              width: '80%',
+              marginTop: 10,
+              marginBottom: 10,
+            }} />
+            <Button onClick={() => {
+              setLoading(!loading);
+              axios.post('http://agrirwanda.eu-4.evennode.com/api/user', {
+                  fullNames,
+                  phoneNumber,
+                  password,
+                  userType: 'seller'
+              }).then((res) => {
+                  window.localStorage.setItem('token', res.data.token);
+                  window.localStorage.setItem('isLoggedIn', true);
+                  history.push('/seller/home');
+              }).catch((err) => {
+                alert(err.response.data.message)
+              })
+            }} style={{
+              marginTop: 10,
+              width: '80%'
+            }} variant='success'>{loading ? 'Loading...' : 'Sign up'}</Button>
+            </div>
+          </div> }
+          
+          
+        </div>
       </div>
     </div>
   );
