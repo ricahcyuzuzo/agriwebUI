@@ -28,7 +28,7 @@ const AddProduct = () => {
                     textAlign: 'center'
                 }}>Add Product</h1>
                 <Form.Label>Name</Form.Label>
-                <select className='form-control' onChange={(e) => setName(e.target.value)} >
+                <select className='form-control' onChange={(e) => {setName(e.target.textContent)}} >
                     <option>Beans</option>
                     <option>Yams</option>
                     <option>Potatoes</option>
