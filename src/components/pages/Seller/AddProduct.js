@@ -29,7 +29,8 @@ const AddProduct = () => {
                 }}>Add Product</h1>
                 <Form.Label>Name</Form.Label>
                 <select className='form-control' onChange={(e) => {setName(e.target.value)}} >
-                    <option value='Beans'>Beans</option>
+                <option value='' disabled selected>Choose a product</option>
+                <option value='Beans'>Beans</option>
                     <option value='Yams'>Yams</option>
                     <option value='Potatoes'>Potatoes</option>
                     <option value='Mangoes'>Mangoes</option>
