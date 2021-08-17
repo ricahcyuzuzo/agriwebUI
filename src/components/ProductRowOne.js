@@ -51,8 +51,8 @@ function Farmers(){
                         marginTop: 10,
                         marginLeft: 20
                     }}>
-                        <h4>Juliene Stephens</h4>
-                        <p><Badge variant='primary'>120 Kg</Badge> <Badge variant='dark' style={{
+                        <h4>Hananiya Rwabukeye</h4>
+                        <p><Badge variant='primary'>120 KGs</Badge> <Badge variant='dark' style={{
                             backgroundColor: 'purple'
                         }}>203 RWF / Kg</Badge></p>
                     </div>
