@@ -9,7 +9,7 @@ const ProductsScreen = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('https://agrirwanda.eu-4.evennode.com/api/seller_products', {params: {phoneNumber: window.localStorage.getItem('phone')}}).then((res) => {
+        axios.get('https://agrirwanda.eu-4.evennode.com/api/products_approved', {params: {phoneNumber: window.localStorage.getItem('phone')}}).then((res) => {
             setProducts(res.data.data);
         })
     }, [])
