@@ -89,6 +89,7 @@ function Shop() {
               }).then((res) => {
                   window.localStorage.setItem('token', res.data.token);
                   window.localStorage.setItem('isLoggedIn', true);
+                  window.localStorage.setItem('phone', phoneNumber)
                   history.push('/seller/home');
               }).catch((err) => {
                 alert(err.response.data.message)
