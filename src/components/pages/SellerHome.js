@@ -13,7 +13,7 @@ function SellerHome() {
         if(!isLoggedIn){
             history.push('/login')
         }
-        axios.get('http://agrirwanda.eu-4.evennode.com/api/seller_products', {params: {phoneNumber: window.localStorage.getItem('phone')}}).then((res) => {
+        axios.get('https://agrirwanda.eu-4.evennode.com/api/seller_products', {params: {phoneNumber: window.localStorage.getItem('phone')}}).then((res) => {
             setProducts(res.data.data);
         });     
     }, []);

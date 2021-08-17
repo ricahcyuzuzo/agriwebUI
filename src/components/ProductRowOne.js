@@ -11,7 +11,7 @@ function Farmers(){
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://agrirwanda.eu-4.evennode.com/api/getname', {params: {name: window.localStorage.getItem('productName')}}).then((res) => {
+        axios.get('https://agrirwanda.eu-4.evennode.com/api/getname', {params: {name: window.localStorage.getItem('productName')}}).then((res) => {
             setProducts(res.data.data);
             console.log(res.data.data)
         })

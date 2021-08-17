@@ -83,7 +83,7 @@ function Shop() {
             }}>Forgot your Password?</span>
             <Button onClick={() => {
               setLoading(!loading);
-              axios.post('http://agrirwanda.eu-4.evennode.com/api/login', {
+              axios.post('https://agrirwanda.eu-4.evennode.com/api/login', {
                   phoneNumber,
                   password,
               }).then((res) => {
@@ -123,7 +123,7 @@ function Shop() {
             }} />
             <Button onClick={() => {
               setLoading(!loading);
-              axios.post('http://agrirwanda.eu-4.evennode.com/api/user', {
+              axios.post('https://agrirwanda.eu-4.evennode.com/api/user', {
                   fullNames,
                   phoneNumber,
                   password,
