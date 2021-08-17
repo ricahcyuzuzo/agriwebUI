@@ -81,6 +81,7 @@ const AddProduct = () => {
                                 history.push('/seller/product')
                         
                             }).catch(err => {
+                                alert(err.response.data.message);
                                 console.log(err.response.data.message);
                             })
                         
