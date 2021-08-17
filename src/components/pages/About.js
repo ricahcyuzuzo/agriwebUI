@@ -1,7 +1,8 @@
 import Navbar from '../Navbar';
 import React, {useEffect, useState} from 'react'
 import { Button, Form, Tab, Tabs } from 'react-bootstrap';
-
+import Rich from '../../image/rich.PNG';
+import Hon from '../../image/honore.jpeg';
 function About() {
     const [isLogin, setIsLogin] = useState(true);
     return(
@@ -98,14 +99,14 @@ function About() {
                     width: 200,
                     height: 300,
                     borderRadius: 20
-                }} src='https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' />
+                }} src={Hon} />
                 <img style={{
                     width: 200,
                     height: 300,
                     marginTop: 150,
                     marginLeft: 50,
                     borderRadius: 20
-                }} src='https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' />
+                }} src={Rich} />
 
                 </div>
                 </div>

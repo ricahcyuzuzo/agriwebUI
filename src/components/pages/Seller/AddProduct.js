@@ -28,15 +28,15 @@ const AddProduct = () => {
                     textAlign: 'center'
                 }}>Add Product</h1>
                 <Form.Label>Name</Form.Label>
-                <select className='form-control' onChange={(e) => {setName(e.target.textContent)}} >
-                    <option>Beans</option>
-                    <option>Yams</option>
-                    <option>Potatoes</option>
-                    <option>Mangoes</option>
-                    <option>Jack Fruits</option>
-                    <option>Tomatoes</option>
-                    <option>Cassava</option>
-                    <option>Mushrooms</option>
+                <select className='form-control' onChange={(e) => {setName(e.target.value)}} >
+                    <option value='Beans'>Beans</option>
+                    <option value='Yams'>Yams</option>
+                    <option value='Potatoes'>Potatoes</option>
+                    <option value='Mangoes'>Mangoes</option>
+                    <option value='Jack Fruits'>Jack Fruits</option>
+                    <option value='Tomatoes'>Tomatoes</option>
+                    <option value='Cassava'>Cassava</option>
+                    <option value='Mushrooms'>Mushrooms</option>
                 </select>
                 <Form.Label>Price Per Unit</Form.Label>
                 <Form.Control type='text' onChange={(e) => setPrice(e.target.value)} />
