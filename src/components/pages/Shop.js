@@ -1,12 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import CategoriesNavigation from '../CategoriesNav';
 import '../../App.css';
-import ProductRowOne from '../ProductRowOne';
-import ProductRowTwo from '../ProductRowTwo';
 import Navbar from '../Navbar';
 import {useHistory} from 'react-router-dom';
 import { Button, Form, Tab, Tabs } from 'react-bootstrap';
+import Anima from '../../image/anima.gif'
 
 function Shop() {
   const [fullNames, setFullNames] = useState('');
@@ -20,11 +18,12 @@ function Shop() {
   return (
     <div className="App" style={{
       backgroundColor: '#331974',
-      color: '#fff'
+      color: '#fff',
+      paddingTop: 10,
     }}>
       <Navbar />
       <div style={{
-        height: '550px',
+        minHeight: '700px',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -36,15 +35,14 @@ function Shop() {
           width: '45%',
           marginTop: 100
         }}>
-          <h1 style={{
-            fontSize: 50
-          }}>The place where farmers gather and share.</h1>
-          <p style={{
-            marginTop: '20px'
-          }}>Join the agrirwanda forum to talk to farmers around the country and get knowledge from them.</p>
+          <img src={Anima} style={{
+            width: 1000,
+            height: 500
+          }} />
         </div>
         <div style={{
         backgroundColor: '#fff',
+        marginTop: 100,
         width: '30%',
         height: '400px',
         borderRadius: 10,

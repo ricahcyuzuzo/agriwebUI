@@ -14,6 +14,7 @@ import AddProduct from './components/pages/Seller/AddProduct';
 import UpdateProduct from './components/pages/Seller/UpdateProduct';
 import About from './components/pages/About';
 import Farmers from './components/ProductRowOne';
+import Contact from './components/pages/Contact';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -27,6 +28,7 @@ function App() {
         <Route path='/services' component={Login} />
         <Route path='/product' component={ViewProduct} />
         <Route path='/farmers' component={Farmers} />
+        <Route path='/contact' component={Contact} />
         <Route path='/seller/home' component={SellerHome} />
         <Route path='/seller/product' component={ProductsScreen} />
         <Route path='/seller/profile' component={ProfileScreen} />

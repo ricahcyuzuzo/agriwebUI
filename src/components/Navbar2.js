@@ -17,7 +17,8 @@ function Navbarr2() {
                     <Link to="/about" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: '#fff'}}>About</Link>
                     <Link to="/services" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: '#fff'}}>Services</Link>
                     <Link to="/product" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: '#fff'}}>Products</Link>
-                    <Link to="/cart" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: '#fff'}}><FiMail /></Link>
+                    <Link to="/contact" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: '#fff'}}>Contact us</Link>
+                    <Link to="/forum" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: '#fff'}}>Forum</Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

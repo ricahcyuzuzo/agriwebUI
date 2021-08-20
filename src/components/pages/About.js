@@ -2,20 +2,20 @@ import Navbar from '../Navbar';
 import React, {useEffect, useState} from 'react'
 import { Button, Form, Tab, Tabs } from 'react-bootstrap';
 import Rich from '../../image/rich.PNG';
-import Hon from '../../image/honore.jpeg';
+import Hon from '../../image/honore.png';
 function About() {
     const [isLogin, setIsLogin] = useState(true);
     return(
-        <div className="App" style={{
+        <div style={{
             backgroundColor: '#331974',
-            color: '#fff'
+            color: '#fff',
+            paddingTop: 10
           }}>
-            <Navbar />
+              <Navbar />
             <div style={{
-              minHeight: '650px',
+              minHeight: '700px',
               paddingLeft: '100px',
               paddingRight: '100px',
-              marginTop: '30px',
             }}>
                 <div style={{
                     marginTop: 100,
@@ -74,7 +74,7 @@ function About() {
                 </div>
               </div>
               <div style={{
-              minHeight: '700px',
+              minHeight: '500px',
               paddingLeft: '100px',
               paddingRight: '100px',
               display: 'flex'
@@ -91,58 +91,59 @@ function About() {
                 }}>We are a team of young innovators who are willing to bring best performance in agriculture through technology and communication to improve productivity</p>
 
                 </div>
-                <div style={{
-                    display: 'flex',
-                    marginTop: 200
-                }}>
-                <img style={{
-                    width: 200,
-                    height: 300,
-                    borderRadius: 20
-                }} src={Hon} />
-                <img style={{
-                    width: 200,
-                    height: 300,
-                    marginTop: 150,
-                    marginLeft: 50,
-                    borderRadius: 20
-                }} src={Rich} />
-
-                </div>
+                
                 </div>
               <div style={{
-              minHeight: '650px',
+              minHeight: '700px',
               paddingLeft: '100px',
               paddingRight: '100px',
               marginTop: '30px',
               backgroundColor: '#2C6E84',
             }}>
                 <div style={{
-                    width: '40%',
-                    margin: 'auto'
+                    marginTop: 200,
+                    paddingTop: 20
                 }}>
-                    <h1 style={{
-                    textAlign: 'center',
-                    paddingTop: '50px'
-                }}>Contact us</h1>
+                <div style={{
+                    display: 'flex',
 
-                <Form.Control type='text' placeholder='Names' style={{
+                }}>
+                    <img style={{
+                        width: 200,
+                        height: 300,
+                        borderRadius: 20
+                    }} src={Hon} />
+                    <div style={{
+                        marginTop: 50,
+                        marginLeft: 30
+                    }}>
+                        <h3>NGABOYURWANDA Honore</h3>
+                        <p>He is a stududent at IPRC NGOMA College where he is persuing his Information technology degree</p>
+                        <p>He is specialized in Information technology</p>
+                    </div>
+                </div>
+                <div style={{
                     marginTop: 20,
-                }} />
-                <Form.Control type='text' placeholder='Email' style={{
-                    marginTop: 20,
-                }}  />
-                <textarea className='form-control' placeholder='Message' style={{
-                    marginTop: 20, 
-                }}></textarea>
-                <Button style={{
-                    marginTop: 20,
-                    width: '100%',
-                }} variant='success'>Send</Button>
+                    display: 'flex'
+                }}>
+                    <img style={{
+                        width: 200,
+                        height: 300,
+                        borderRadius: 20
+                    }} src={Rich} />
+                    <div style={{
+                        marginTop: 50,
+                        marginLeft: 30
+                    }}>
+                        <h3>NSHIMYUMUKIZA Richard</h3>
+                        <p>He is a stududent at IPRC NGOMA College where he is persuing his Information technology degree</p>
+                        <p>He is specialized in Information technology</p>
+                        <p>Mobile App Developer</p>
+                    </div>
                 </div>
 
-                
-              </div>
+                </div>    
+            </div>
         </div>
     )
 }
