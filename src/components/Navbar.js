@@ -1,4 +1,4 @@
-import { Navbar, Nav} from 'react-bootstrap';
+import { Navbar, Nav, Button} from 'react-bootstrap';
 import { FiMail, FiShoppingCart } from 'react-icons/fi'
 import logo from './images/NavLogo.png';
 import '../App.css';
@@ -8,20 +8,23 @@ function Navbarr() {
     return (
         <Navbar style={{
             position: 'fixed',
-            backgroundColor: '#331974',
+            backgroundColor: '#fff',
+            fontSize: '20px',
             width: '100%',
             top: 0,
+            boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.2)'
         }}>
-            <Navbar.Brand href="#home" style={{paddingLeft: '10px'}}><img src={logo} alt="Logo" className="logo"/><b style={{fontSize: 20, color: '#fff'}}>Agri <font color="#8FDAB1">Web</font></b></Navbar.Brand>
+            <Navbar.Brand href="#home" style={{paddingLeft: '10px', paddingTop: '5px'}}><img src={logo} alt="Logo" className="logo"/><b style={{fontSize: 27, fontWeight: 'bold', marginTop: 20, fontFamily: 'Urbanist'}}>Agri <font color="green">Web</font></b></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{marginTop: '30px'}} />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="ml-auto" style={{paddingTop: '20px'}}>
-                    <Link to="/" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: '#fff'}}>Home</Link>
-                    <Link to="/about" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: '#fff'}}>About</Link>
-                    <Link to="/services" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: '#fff'}}>Services</Link>
-                    <Link to="/product" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: '#fff'}}>Products</Link>
-                    <Link to="/contact" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: '#fff'}}>Contact Us</Link>
-                    <Link to="/forum" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: '#fff'}}>Forum</Link>
+                <Nav className="ml-auto" style={{paddingTop: '20px', paddingBottom: '20px'}}>
+                    <Nav.Link><Link to="/" style={{paddingRight: '30px', color: 'green', paddingBottom: '20px', paddingLeft: '30px', fontFamily: 'Urbanist'}}>Home</Link></Nav.Link>
+                    <Nav.Link><Link to="/product" style={{paddingRight: '30px', color: 'green', paddingBottom: '10px', paddingLeft: '30px', fontFamily: 'Urbanist'}}>Products</Link></Nav.Link>
+                    <Nav.Link><Link to="/forum" style={{paddingRight: '30px', color: 'green', paddingBottom: '10px', paddingLeft: '30px', fontFamily: 'Urbanist'}}>Forum</Link></Nav.Link>
+                    <Nav.Link><Link to="/contact" style={{paddingRight: '30px', color: 'green', paddingBottom: '10px', paddingLeft: '30px', fontFamily: 'Urbanist'}}>Contact us</Link></Nav.Link>
+                    <Link to='/signup'><Button style={{
+                        marginTop: 5
+                    }} variant='success'>Sign Up</Button></Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

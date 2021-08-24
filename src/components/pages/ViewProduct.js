@@ -1,10 +1,6 @@
 import React, {useState, useContext, useEffect} from 'react';
-import { FormControl, InputGroup } from 'react-bootstrap';
-import pic from '../images/big1.png';
-import './pages.css';
-import CartContext from '../../context/cartContext';
 import { Link } from 'react-router-dom';
-import Navbar from '../Navbar2';
+import Navbar from '../Navbar';
 import axios from 'axios'
 
 function ViewProduct() {
@@ -20,7 +16,7 @@ function ViewProduct() {
     return(
         <>
         <Navbar />
-        <h1 style={{textAlign: 'center', marginTop: 20, marginBottom: 20}}>Products</h1>
+        <h1 style={{textAlign: 'center', marginTop: 200, marginBottom: 100, color: 'green', fontFamily: 'Urbanist'}}>Products</h1>
         <div style={{
             display: 'flex',
             width: '90%',
@@ -28,7 +24,8 @@ function ViewProduct() {
             flexDirection: 'row',
             flexWrap: 'wrap',
             margin: 'auto',
-            paddingLeft: 100
+            paddingLeft: 100,
+            fontFamily: 'Urbanist'
         }}>
             {products.map((item, idx) => {
                 return (

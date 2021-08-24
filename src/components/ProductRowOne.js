@@ -20,14 +20,15 @@ function Farmers(){
     let history = useHistory();
     return(
         <div className='container' style={{
-            paddingTop: 50
+            paddingTop: 50,
+            fontFamily: 'Urbanist'
         }}>
             <div style={{
                 display: 'flex',
                 justifyContent: 'space-between',
                 padding: '10px 10px 10px 10px'
             }}>
-            <Button onClick={() => history.goBack()} variant='primary' style={{
+            <Button onClick={() => history.goBack()} variant='success' style={{
                 marginBottom: 20
             }}><FaArrowLeft size={24} /></Button>
             <Form.Control type='text' placeholder='Search' style={{ width: '20%'}} />

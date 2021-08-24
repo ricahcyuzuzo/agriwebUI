@@ -6,8 +6,9 @@ function Contact() {
 
     return(
         <div className="App" style={{
-            backgroundColor: '#331974',
-            color: '#fff'
+            backgroundColor: '#fff',
+            color: '#fff',
+            fontFamily: 'Urbanist'
           }}>
             <Navbar />
             <div style={{
@@ -17,11 +18,13 @@ function Contact() {
               display: 'flex',
             }}>
                 <div style={{
-                    width: '40%',
+                    width: '30%',
                     margin: 'auto'
                 }}>
                     <h1 style={{
                     textAlign: 'center',
+                    color: 'green',
+                    fontSize: 50
                 }}>Contact us</h1>
 
                 <Form.Control type='text' placeholder='Names' style={{
