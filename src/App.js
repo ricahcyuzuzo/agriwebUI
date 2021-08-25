@@ -11,6 +11,8 @@ import ViewProduct from './components/pages/ViewProduct';
 import Farmers from './components/ProductRowOne';
 import Contact from './components/pages/Contact';
 import Signup from './components/pages/Signup';
+import About from './components/pages/About';
+import SellerDashboard from './components/pages/SellerDashboard';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -24,6 +26,8 @@ function App() {
         <Route path='/farmers' component={Farmers} />
         <Route path='/contact' component={Contact} />
         <Route path='/signup' component={Signup} />
+        <Route path='/about' component={About} />
+        <Route path='/seller/home' component={SellerDashboard} />
         <Route path='/seller/product' component={ProductsScreen} />
         <Route path='/seller/profile' component={ProfileScreen} />
         <Route path='/seller/add_product' component={AddProduct} />

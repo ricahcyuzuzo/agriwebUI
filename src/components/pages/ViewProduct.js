@@ -2,9 +2,13 @@ import React, {useState, useContext, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar';
 import axios from 'axios'
+import { Form } from 'react-bootstrap';
+import SearchInput , {createFilter} from 'react-search-input';
+const KEYS_TO_FILTERS = ['productName', 'availableQuantity', 'description', 'pricePerUnit', 'productCategory']
 
 function ViewProduct() {
     const [products, setProducts] = useState([]);
+    const [searchText, setSeachText] = useState('');
 
     useEffect(() => {
         axios.get('https://agrirwanda.eu-4.evennode.com/api/products_approved').then((res) => {
@@ -13,10 +17,20 @@ function ViewProduct() {
         })
     }, [])
 
+    const filteredProducts = products.filter(createFilter(searchText, KEYS_TO_FILTERS));
     return(
         <>
         <Navbar />
-        <h1 style={{textAlign: 'center', marginTop: 200, marginBottom: 100, color: 'green', fontFamily: 'Urbanist'}}>Products</h1>
+        <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginBottom: 100,
+            paddingRight: 200,
+            paddingLeft: 130
+        }}>
+                <h1 style={{marginTop: 200, color: 'green', fontFamily: 'Urbanist'}}>Products</h1>
+                <Form.Control type='text' placeholder='Search' style={{ marginTop: 210, width: '20%'}} onChange={(e) => setSeachText(e.target.value)} />
+            </div>
         <div style={{
             display: 'flex',
             width: '90%',
@@ -25,9 +39,9 @@ function ViewProduct() {
             flexWrap: 'wrap',
             margin: 'auto',
             paddingLeft: 100,
-            fontFamily: 'Urbanist'
+            fontFamily: 'Urbanist',
         }}>
-            {products.map((item, idx) => {
+            {filteredProducts.map((item, idx) => {
                 return (
                     <Link key={idx} onClick={() => {
                         window.localStorage.setItem('productName', item.productName);

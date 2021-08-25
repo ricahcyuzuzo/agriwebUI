@@ -31,7 +31,6 @@ function Farmers(){
             <Button onClick={() => history.goBack()} variant='success' style={{
                 marginBottom: 20
             }}><FaArrowLeft size={24} /></Button>
-            <Form.Control type='text' placeholder='Search' style={{ width: '20%'}} />
             </div>
             <div className='shadow-lg p-3 mb-5 bg-body' style={{
                 width: '100%',

@@ -14,17 +14,20 @@ function Navbarr() {
             top: 0,
             boxShadow: '0 2px 10px 0 rgba(0, 0, 0, 0.2)'
         }}>
-            <Navbar.Brand href="#home" style={{paddingLeft: '10px', paddingTop: '5px'}}><img src={logo} alt="Logo" className="logo"/><b style={{fontSize: 27, fontWeight: 'bold', marginTop: 20, fontFamily: 'Urbanist'}}>Agri <font color="green">Web</font></b></Navbar.Brand>
+            <Navbar.Brand href="#home" style={{paddingLeft: '10px', paddingTop: '5px'}}><img src={logo} alt="Logo" className="logo" style={{
+                marginTop: -15,
+            }} /><span style={{fontSize: 35, fontWeight: 'bold', fontFamily: 'Roboto'}}>Agri <font color="green">Web</font></span></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{marginTop: '30px'}} />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto" style={{paddingTop: '20px', paddingBottom: '20px'}}>
                     <Nav.Link><Link to="/" style={{paddingRight: '30px', color: 'green', paddingBottom: '20px', paddingLeft: '30px', fontFamily: 'Urbanist'}}>Home</Link></Nav.Link>
-                    <Nav.Link><Link to="/product" style={{paddingRight: '30px', color: 'green', paddingBottom: '10px', paddingLeft: '30px', fontFamily: 'Urbanist'}}>Products</Link></Nav.Link>
+                    <Nav.Link><Link to="/about" style={{paddingRight: '30px', color: 'green', paddingBottom: '10px', paddingLeft: '30px', fontFamily: 'Urbanist'}}>About</Link></Nav.Link>
+                    <Nav.Link><Link to="/product" style={{paddingRight: '30px', color: 'green', paddingBottom: '10px', paddingLeft: '30px', fontFamily: 'Urbanist'}}>Product</Link></Nav.Link>                  
                     <Nav.Link><Link to="/forum" style={{paddingRight: '30px', color: 'green', paddingBottom: '10px', paddingLeft: '30px', fontFamily: 'Urbanist'}}>Forum</Link></Nav.Link>
                     <Nav.Link><Link to="/contact" style={{paddingRight: '30px', color: 'green', paddingBottom: '10px', paddingLeft: '30px', fontFamily: 'Urbanist'}}>Contact us</Link></Nav.Link>
                     <Link to='/signup'><Button style={{
                         marginTop: 5
-                    }} variant='success'>Sign Up</Button></Link>
+                    }} variant='success'>Login / Sign Up</Button></Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

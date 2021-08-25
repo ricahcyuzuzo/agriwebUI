@@ -19,8 +19,10 @@ const Signup = () => {
         <div>
             <Navbar />
             <div style={{
+              height: 200,
+            }}></div>
+            <div style={{
                 backgroundColor: '#fff',
-                marginTop: 200,
                 width: '30%',
                 height: '400px',
                 borderRadius: 10,
@@ -44,7 +46,7 @@ const Signup = () => {
                      textAlign: 'center',
                      marginTop: '20px',
                      marginBottom: '20px'
-                    }}>Sign in</h2>
+                    }}>Login</h2>
                     <div style={{
                       marginLeft: 60,
                     }}>
