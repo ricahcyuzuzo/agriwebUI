@@ -23,7 +23,6 @@ export const H1 = styled.h1`
     font-weight: bolder;
     margin-top: 150px;
     margin-right: 100px;
-    width: 120%;
     font-size: 47px;
     font-family: 'Urbanist', sans-serif;
 
