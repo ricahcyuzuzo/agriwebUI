@@ -18,11 +18,11 @@ const Home = () => {
                             fontSize: 50,
                             fontWeight: 'bolder',
                             marginTop: 50,
-                        }}>Welcome to Agri Rwanda</H1>
+                        }}>Welcome to FarmaTalk</H1>
                         <P style={{
                             fontSize: 25,
                         }}>
-                            Agri Rwanda is a web app designed to facilitate farmers to reduce harvest destroyed because of lack of market, it links farming cooperatives and individual farmers to customers and facilitates restaurants, schools, hotels, penitentiaries and industries that produce products from agriculture to find the where they can buy crops they need.  
+                            FarmaTalk is a web app designed to facilitate farmers to reduce harvest destroyed because of lack of market, it links farming cooperatives and individual farmers to customers and facilitates restaurants, schools, hotels, penitentiaries and industries that produce products from agriculture to find the where they can buy crops they need.  
                         </P>
                         <Buttons variant='success'>Sign Up</Buttons>
                     </Col>
