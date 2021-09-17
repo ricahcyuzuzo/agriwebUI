@@ -3,17 +3,17 @@ import productImage from './images/productImage.png';
 import { Button, Badge, Form } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import CartContext from '../context/cartContext';
-import { FaArrowLeft, FaLongArrowAltLeft } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
 import { FiArrowLeft } from 'react-icons/fi';
 import axios from 'axios';
 
 function Farmers(){
-    const [products, setProducts] = useState([]);
+    const [data, setData] = useState({});
 
     useEffect(() => {
-        axios.get('https://agrirwanda.eu-4.evennode.com/api/getname', {params: {name: window.localStorage.getItem('productName')}}).then((res) => {
-            setProducts(res.data.data);
+        axios.get('https://agrirwanda.eu-4.evennode.com/api/users', {params: {telephone: window.localStorage.getItem('phone')}}).then((res) => {
             console.log(res.data.data)
+            setData(res.data.data);
         })
     }, [])
 
@@ -46,15 +46,15 @@ function Farmers(){
                         width: 80,
                         height: 80,
                         borderRadius: '100%',
-                    }} src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' />
+                    }} src='https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg' />
                     <div style={{
                         marginTop: 10,
                         marginLeft: 20
                     }}>
-                        <h4>Hananiya Rwabukeye</h4>
-                        <p><Badge variant='primary'>120 KGs</Badge> <Badge variant='dark' style={{
+                        <h4>{data?.fullNames}</h4>
+                        <p><Badge variant='primary'>{window.localStorage.getItem('quantity')} KGs</Badge> <Badge variant='dark' style={{
                             backgroundColor: 'purple'
-                        }}>203 RWF / Kg</Badge></p>
+                        }}>{window.localStorage.getItem('price')} RWF / Kg</Badge></p>
                     </div>
                 </div>
                 <div style={{
@@ -62,8 +62,7 @@ function Farmers(){
                     textAlign: 'right',
                     color: 'gray'
                 }}>
-                    <h5>Nyaruguru District</h5>
-                    <h5>+250 784 218 000</h5>
+                    <h5>+25{window.localStorage.getItem('phone')}</h5>
                 </div>
             </div>
             

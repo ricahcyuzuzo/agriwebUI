@@ -45,6 +45,10 @@ function ViewProduct() {
                 return (
                     <Link key={idx} onClick={() => {
                         window.localStorage.setItem('productName', item.productName);
+                        window.localStorage.setItem('phone', item.sellerIdentifier);
+                        window.localStorage.setItem('price', item.pricePerUnit);
+                        window.localStorage.setItem('quantity', item.availableQuantity);
+
                     }} to='/farmers' style={{
                         textDecorationLine: 'none',
                         textDecorationColor: '#331974',

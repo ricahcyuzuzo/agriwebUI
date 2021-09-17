@@ -13,6 +13,9 @@ import Contact from './components/pages/Contact';
 import Signup from './components/pages/Signup';
 import About from './components/pages/About';
 import SellerDashboard from './components/pages/SellerDashboard';
+import Forum from './components/pages/Forum';
+import AddTopic from './components/pages/AddTopic';
+import CommentTopic from './components/pages/ViewTopic';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -27,6 +30,9 @@ function App() {
         <Route path='/contact' component={Contact} />
         <Route path='/signup' component={Signup} />
         <Route path='/about' component={About} />
+        <Route path='/forum' component={Forum} />
+        <Route path='/ask' component={AddTopic} />
+        <Route path='/comment' component={CommentTopic} />
         <Route path='/seller/home' component={SellerDashboard} />
         <Route path='/seller/product' component={ProductsScreen} />
         <Route path='/seller/profile' component={ProfileScreen} />

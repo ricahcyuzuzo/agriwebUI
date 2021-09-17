@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function Navbarr() {
     return (
         <Navbar expand="lg">
-            <Navbar.Brand href="#home" style={{paddingLeft: '10px'}}><img src={logo} alt="Logo" style={{ marginTop: -10}} className="logo"/><b style={{fontSize:35, fontFamily: "Roboto"}}>Agri <font color="346B33">Web</font></b></Navbar.Brand>
+            <Navbar.Brand href="#home" style={{paddingLeft: '10px'}}><img src={logo} alt="Logo" style={{ marginTop: -10}} className="logo"/><b style={{fontSize:35, fontFamily: "Roboto"}}>Farma<font color="346B33">Talk</font></b></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{marginTop: '30px'}} />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto" style={{paddingTop: '30px', fontFamily: 'Urbanist'}}>

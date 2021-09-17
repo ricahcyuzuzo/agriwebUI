@@ -16,7 +16,7 @@ function Navbarr() {
         }}>
             <Navbar.Brand href="#home" style={{paddingLeft: '10px', paddingTop: '5px'}}><img src={logo} alt="Logo" className="logo" style={{
                 marginTop: -15,
-            }} /><span style={{fontSize: 35, fontWeight: 'bold', fontFamily: 'Roboto'}}>Agri <font color="green">Web</font></span></Navbar.Brand>
+            }} /><span style={{fontSize: 35, fontWeight: 'bold', fontFamily: 'Roboto'}}>Farma<font color="green">Talk</font></span></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{marginTop: '30px'}} />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto" style={{paddingTop: '20px', paddingBottom: '20px'}}>
