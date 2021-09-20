@@ -56,7 +56,6 @@ const AddProduct = () => {
                                 availableQuantity: quantity,
                                 description: description,
                                 sellerIdentifier: window.localStorage.getItem('phone'),
-                                productCategory: 'fruits',
                                 image: res.data.secure_url
                             }).then((res) => {
                                 alert(res.data.message);

@@ -9,7 +9,7 @@ const SellerDashboard = () => {
     let history = useHistory();
 
     useEffect(() => {
-        axios.get('https://agrirwanda.eu-4.evennode.com/api/seller_products', {params: {phoneNumber: window.localStorage.getItem('phone')}}).then((res) => {
+        axios.post('https://agrirwanda.eu-4.evennode.com/api/seller_products',{}, {params: {phoneNumber: window.localStorage.getItem('phone')}}).then((res) => {
             setProducts(res.data.data);
         })
     }, []);
