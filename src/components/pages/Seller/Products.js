@@ -5,14 +5,16 @@ import { Link } from 'react-router-dom';
 import { FaPencilAlt } from 'react-icons/fa';
 import { FiTrash2 } from 'react-icons/fi';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const ProductsScreen = () => {
     const [products, setProducts] = useState([]);
+    const history = useHistory();
 
     useEffect(() => {
-        axios.post('https://agrirwanda.eu-4.evennode.com/api/seller_products',{}, {params: {phoneNumber: window.localStorage.getItem('phone')}}).then((res) => {
+        axios.get('https://agrirwanda.eu-4.evennode.com/api/seller_products', {params: {phoneNumber: window.localStorage.getItem('phone')}}).then((res) => {
             setProducts(res.data.data);
-        })
+        }).catch((err) => console.log(err.response.data))
     }, [])
     return (
         <>
@@ -36,13 +38,11 @@ const ProductsScreen = () => {
       <th>Name</th>
       <th>Price</th>
       <th>Quantity</th>
-      <th>Category</th>
-      <th>Update Product</th>
       <th>Delete Product</th>
     </tr>
   </thead>
   <tbody>
-      {products.map((item, idx) => {
+      { products.length > 0 ? products.map((item, idx) => {
           return(
             <tr key={idx}>
             <td><img src={item.image} style={{
@@ -53,23 +53,23 @@ const ProductsScreen = () => {
             <td>{item.productName}</td>
             <td>{item.pricePerUnit} Rwf</td>
             <td>{item.availableQuantity} Kg</td>
-            <td>{item.productCategory}</td>
             <td style={{
-            }}><Link to='/seller/update_product'><FaPencilAlt size={24} style={{
-                marginLeft: 100
-            }} /></Link></td>
-            <td style={{
-            }}><Link onClick={() => {
-                axios.delete('https://agrirwanda.eu-4.evennode.com/api/product', {params: {product_id: item._id}}).then((res) => {
+            }}><Button variant='light' style={{
+                width: 50,
+                height: 50,
+            }} onClick={() => {
+                axios.delete('https://agrirwanda.eu-4.evennode.com/api/delete', {params: {product_id: item._id}}).then((res) => {
                     alert(res.data.message)
+                    window.location.reload(false)
                 });
             }}><FiTrash2 size={24} style={{
-                marginLeft: 100,
                 color: 'red'
-            }} /></Link></td>
+            }} /></Button></td>
             </tr>
           )
-      })}
+      }) : <span style={{
+          textAlign: 'center'
+      }}>No Products Found</span>}
   </tbody>
 
 </Table>
