@@ -51,7 +51,7 @@ function Farmers(){
                         marginTop: 10,
                         marginLeft: 20
                     }}>
-                        <h4>{data[0].fullNames}</h4>
+                        <h4>{data[0]?.fullNames}</h4>
                         <p><Badge variant='primary'>{window.localStorage.getItem('quantity')} KGs</Badge> <Badge variant='dark' style={{
                             backgroundColor: 'purple'
                         }}>{window.localStorage.getItem('price')} RWF / Kg</Badge></p>
