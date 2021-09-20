@@ -28,30 +28,11 @@ const AddProduct = () => {
                     textAlign: 'center'
                 }}>Add Product</h1>
                 <Form.Label>Name</Form.Label>
-                <select className='form-control' onChange={(e) => {setName(e.target.value)}} >
-                <option value='' disabled selected>Choose a product</option>
-                <option value='Beans'>Beans</option>
-                    <option value='Yams'>Yams</option>
-                    <option value='Potatoes'>Potatoes</option>
-                    <option value='Mangoes'>Mangoes</option>
-                    <option value='Jack Fruits'>Jack Fruits</option>
-                    <option value='Tomatoes'>Tomatoes</option>
-                    <option value='Cassava'>Cassava</option>
-                    <option value='Mushrooms'>Mushrooms</option>
-                </select>
+                <input type='text' className='form-control' onChange={(e) => setName(e.target.value)} />
                 <Form.Label>Price Per Unit</Form.Label>
                 <Form.Control type='text' onChange={(e) => setPrice(e.target.value)} />
                 <Form.Label>Quantity in Kg</Form.Label>
                 <Form.Control type='text' onChange={(e) => setQuantity(e.target.value)} />
-                <Form.Label>Category</Form.Label>
-                <select className='form-control' onChange={(e) => setCategory(e.target.value)} >
-                    <option selected disabled>Choose Category</option>
-                    <option style={{
-                        height: 30
-                    }}>Fruits</option>
-                    <option>Vegetables</option>
-                    <option>Seeds</option>
-                </select>
                 <Form.Label>Description</Form.Label>
                 <textarea placeholder='Please do not exceed 100 words' onChange={(e) => setDescription(e.target.value)}  className='form-control' style={{
                     height: '100px'
@@ -75,7 +56,7 @@ const AddProduct = () => {
                                 availableQuantity: quantity,
                                 description: description,
                                 sellerIdentifier: window.localStorage.getItem('phone'),
-                                productCategory: category,
+                                productCategory: 'fruits',
                                 image: res.data.secure_url
                             }).then((res) => {
                                 alert(res.data.message);

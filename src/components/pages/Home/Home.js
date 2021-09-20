@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../../Navbar';
 import { SectionOne, Row, Col, H1, P, Image, Buttons, Card, H3 , SectionTwo} from './HomeStyles';
 import HomeImage from '../../../image/hom.png';
@@ -24,7 +25,7 @@ const Home = () => {
                         }}>
                             FarmaTalk is a web app designed to facilitate farmers to reduce harvest destroyed because of lack of market, it links farming cooperatives and individual farmers to customers and facilitates restaurants, schools, hotels, penitentiaries and industries that produce products from agriculture to find the where they can buy crops they need.  
                         </P>
-                        <Buttons variant='success'>Sign Up</Buttons>
+                        <Link to='/signup'><Buttons variant='success'>Sign Up</Buttons></Link>
                     </Col>
                     <Col style={{
                         marginTop: 50
