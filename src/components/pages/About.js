@@ -2,7 +2,7 @@ import React from 'react'
 import Navbarr from '../Navbar'
 import Honore from '../../image/honore.png';
 import Rich from '../../image/rich2.png';
-import { SectionOne, Row, Col, H1, P, Image, Buttons, Card, H3 , SectionTwo} from './Home/HomeStyles';
+import { Col, P, Image, SectionTwo} from './Home/HomeStyles';
 
 
 const About = () => {

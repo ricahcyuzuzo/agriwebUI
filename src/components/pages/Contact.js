@@ -1,6 +1,6 @@
 import Navbar from '../Navbar';
-import React, {useEffect, useState} from 'react'
-import { Button, Form, Tab, Tabs } from 'react-bootstrap';
+import React from 'react'
+import { Button, Form} from 'react-bootstrap';
 
 function Contact() {
 

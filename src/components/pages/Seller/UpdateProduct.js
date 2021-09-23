@@ -1,22 +1,22 @@
-import React, {useState} from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Form } from 'react-bootstrap';
-import { Link, Redirect, useHistory } from 'react-router-dom';
-import axios from 'axios';
+// import { Button, Form } from 'react-bootstrap';
+// import { useHistory } from 'react-router-dom';
+// import axios from 'axios';
 import Navbar from '../../ProtectedNavbar';
-import { Select } from '@material-ui/core';
+// import { Select } from '@material-ui/core';
 
 const UpdateProduct = () => {
-    const [fullNames, setFullNames] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [password, setPassword] = useState('');
+    // const [fullNames, setFullNames] = useState('');
+    // const [phoneNumber, setPhoneNumber] = useState('');
+    // const [password, setPassword] = useState('');
 
-    const history = useHistory();
+    // const history = useHistory();
 
     return(
         <>
         <Navbar />
-        <div className='container'>
+        {/* <div className='container'>
             <Button variant='primary' onClick={() => history.goBack()}>Go back</Button>
             <div style={{
                 width: '500px',
@@ -49,7 +49,7 @@ const UpdateProduct = () => {
                     marginBottom: 20
                 }}>Update</Button>
             </div>
-        </div>
+        </div> */}
         </>
     )
 }

@@ -1,9 +1,9 @@
-import React, {useState, useContext, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar';
 import axios from 'axios'
 import { Form } from 'react-bootstrap';
-import SearchInput , {createFilter} from 'react-search-input';
+import {createFilter} from 'react-search-input';
 const KEYS_TO_FILTERS = ['productName', 'availableQuantity', 'description', 'pricePerUnit', 'productCategory']
 
 function ViewProduct() {
@@ -66,7 +66,7 @@ function ViewProduct() {
                             width: 150,
                             height: 150,
                             borderRadius: 10,
-                        }} />
+                        }} alt='product' />
                         <h4 style={{
                             marginTop: 20,
                             color: '#222222'

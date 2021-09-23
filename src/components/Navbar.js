@@ -1,5 +1,5 @@
 import { Navbar, Nav, Button} from 'react-bootstrap';
-import { FiMail, FiShoppingCart } from 'react-icons/fi'
+// import { FiMail, FiShoppingCart } from 'react-icons/fi'
 import logo from './images/NavLogo.png';
 import '../App.css';
 import { Link } from 'react-router-dom';

@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import axios from 'axios'
 import Navbar from '../Navbar';
 import {useHistory} from 'react-router-dom';
-import { Button, Form, Tab, Tabs } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 
 const Signup = () => {
     const [fullNames, setFullNames] = useState('');

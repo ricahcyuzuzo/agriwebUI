@@ -53,7 +53,7 @@ const Home = () => {
                             <img src={Ads} style={{
                                 width: '100%',
                                 height: 200,
-                            }} />
+                            }} alt='Ads' />
                             <H3>Advertisement</H3>
                             <P style={{
                                 textAlign: 'justify',
@@ -65,7 +65,7 @@ const Home = () => {
                             <img src='https://cdni.iconscout.com/illustration/premium/thumb/discussion-forum-2691866-2231679.png' style={{
                                 width: '100%',
                                 height: 200,
-                            }} />
+                            }} alt='ads' />
                             <H3>Forum</H3>
                             <P style={{
                                 textAlign: 'justify',
@@ -77,7 +77,7 @@ const Home = () => {
                             <img src={Ads} style={{
                                 width: '100%',
                                 height: 200,
-                            }} />
+                            }} alt='ads' />
                             <H3>Product Post</H3>
                             <P style={{
                                 textAlign: 'justify',

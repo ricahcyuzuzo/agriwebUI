@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import productImage from './images/productImage.png';
-import { Button, Badge, Form } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
-import CartContext from '../context/cartContext';
+// import productImage from './images/productImage.png';
+import { Button, Badge } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
+// import CartContext from '../context/cartContext';
 import { FaArrowLeft } from 'react-icons/fa';
-import { FiArrowLeft } from 'react-icons/fi';
+// import { FiArrowLeft } from 'react-icons/fi';
 import axios from 'axios';
 
 function Farmers(){
@@ -46,7 +46,7 @@ function Farmers(){
                         width: 80,
                         height: 80,
                         borderRadius: '100%',
-                    }} src='https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg' />
+                    }} alt='product' src='https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg' />
                     <div style={{
                         marginTop: 10,
                         marginLeft: 20
