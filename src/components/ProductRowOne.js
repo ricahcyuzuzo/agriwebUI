@@ -68,7 +68,7 @@ function Farmers(){
                         marginTop: 10,
                         marginLeft: 20
                     }}>
-                        <h4>{data.fullNames}</h4>
+                        <h4>{data?.fullNames}</h4>
                         <p><Badge variant='primary'>{window.localStorage.getItem('quantity')} KGs</Badge> <Badge variant='dark' style={{
                             backgroundColor: 'purple'
                         }}>{window.localStorage.getItem('price')} RWF / Kg</Badge></p>
@@ -80,7 +80,7 @@ function Farmers(){
                     color: 'gray'
                 }}>
                     <h5>+25{window.localStorage.getItem('phone')}</h5>
-                    <h6>{data.address.province}/{data?.address.district}/{data?.address.sector}/{data.address.cell}/{data?.address.village}</h6>
+                    <h6>{data?.address.province}/{data?.address.district}/{data?.address.sector}/{data?.address.cell}/{data?.address.village}</h6>
                     <button className='btn btn-primary' onClick={handleShow} >Send Message</button>
                 </div>
             </div>
