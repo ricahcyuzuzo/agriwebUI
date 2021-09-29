@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 // import productImage from './images/productImage.png';
-import { Button, Badge } from 'react-bootstrap';
+import { Button, Badge, Modal } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 // import CartContext from '../context/cartContext';
 import { FaArrowLeft } from 'react-icons/fa';
@@ -9,6 +9,24 @@ import axios from 'axios';
 
 function Farmers(){
     const [data, setData] = useState({});
+    const [show, setShow] = useState(false);
+    const [names, setNames] = useState('');
+    const [phone, setPhone] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const handleSend = () => {
+            axios.post('https://agrirwanda.eu-4.evennode.com/api/message', {
+                names: names,
+                clientPhone: phone,
+                message: message
+            },{params: {phone: window.localStorage.getItem('phone')}} ).then((res) =>{
+                alert(res.data.message);
+                window.location.reload()
+            })
+    }
 
     useEffect(() => {
         axios.get('https://agrirwanda.eu-4.evennode.com/api/users', {params: {telephone: window.localStorage.getItem('phone')}}).then((res) => {
@@ -34,7 +52,7 @@ function Farmers(){
             </div>
             <div className='shadow-lg p-3 mb-5 bg-body' style={{
                 width: '100%',
-                height: 110,
+                height: 140,
                 display: 'flex',
                 justifyContent: 'space-between',
                 borderRadius: 15
@@ -64,9 +82,31 @@ function Farmers(){
                 }}>
                     <h5>+25{window.localStorage.getItem('phone')}</h5>
                     <h6>{data[0]?.address.province}ern Province/{data[0]?.address.district}</h6>
+                    <button className='btn btn-primary' onClick={handleShow} >Send Message</button>
                 </div>
             </div>
             
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                <Modal.Title>Send Message</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <label>Names</label>
+                    <input type='text' className='form-control' onChange={(e) => setNames(e.target.value)} />
+                    <label>Phone Number</label>
+                    <input type='text' className='form-control' maxLength={10} onChange={(e) => setPhone(e.target.value)} />
+                    <label>Message</label>
+                    <textarea type='text' className='form-control' onChange={(e) => setMessage(e.target.value)} />
+                </Modal.Body>
+                <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    Close
+                </Button>
+                <Button variant="success" onClick={handleSend}>
+                    Send Message
+                </Button>
+                </Modal.Footer>
+            </Modal>
         </div>
     )
 }
