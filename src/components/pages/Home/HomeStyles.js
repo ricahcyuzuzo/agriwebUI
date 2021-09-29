@@ -62,6 +62,9 @@ export const Card = styled.div`
     padding-bottom: 20px;
     padding-top: 20px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Urbanist', sans-serif;
 `
 export const SectionTwo = styled.div`
     margin-top: 100px;

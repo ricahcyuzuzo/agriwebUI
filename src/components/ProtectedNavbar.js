@@ -14,6 +14,7 @@ function Navbarr() {
                     <Link to="/seller/home" style={{paddingRight: '30px', color: 'green', paddingBottom: '20px', paddingLeft: '30px'}}>Home</Link>
                     <Link to="/seller/product" style={{paddingRight: '30px', color: 'green', paddingBottom: '20px', paddingLeft: '30px'}}>Product</Link>
                     <Link to="/seller/profile" style={{paddingRight: '30px', color: 'green', paddingBottom: '20px', paddingLeft: '30px'}}>Profile</Link>
+                    <Link to="/seller/message" style={{paddingRight: '30px', color: 'green', paddingBottom: '20px', paddingLeft: '30px'}}>Message</Link>
                     <Link to="/" onClick={() => {
                         window.localStorage.removeItem('token');
                     }}  style={{paddingRight: '30px', color: 'green', paddingBottom: '20px', fontSize: 20, marginTop: -5, paddingLeft: '30px'}}><FiLogOut /></Link>

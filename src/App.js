@@ -16,6 +16,7 @@ import SellerDashboard from './components/pages/SellerDashboard';
 import Forum from './components/pages/Forum';
 import AddTopic from './components/pages/AddTopic';
 import CommentTopic from './components/pages/ViewTopic';
+import MessageScreen from './components/pages/Seller/Messages';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -36,6 +37,7 @@ function App() {
         <Route path='/seller/home' component={SellerDashboard} />
         <Route path='/seller/product' component={ProductsScreen} />
         <Route path='/seller/profile' component={ProfileScreen} />
+        <Route path='/seller/message' component={MessageScreen} />
         <Route path='/seller/add_product' component={AddProduct} />
         <Route path='/seller/update_product' component={UpdateProduct} />
       </Switch>

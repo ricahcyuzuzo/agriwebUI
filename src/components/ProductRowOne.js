@@ -63,6 +63,7 @@ function Farmers(){
                     color: 'gray'
                 }}>
                     <h5>+25{window.localStorage.getItem('phone')}</h5>
+                    <h6>{data[0]?.address.province}ern Province/{data[0]?.address.district}</h6>
                 </div>
             </div>
             

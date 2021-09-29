@@ -132,14 +132,14 @@ const ProfileScreen = () => {
                             axios.patch('https://agrirwanda.eu-4.evennode.com/api/profile', {
                                 idNumber: idNumber,
                                 image: res.data.secure_url,
-                                address: [{
+                                address: {
                                     province: provinceName,
                                     district: districtName,
                                     sector: sectorName,
                                     cell: cellName,
                                     village: villageName,
-                                }]
-                            }, {params: {phoneNumber: window.localStorage.getItem('phone')}})
+                                }
+                            }, {params: {phone: window.localStorage.getItem('phone')}})
                             .then((res) => {
                                 alert(res.data.message)
                                 window.location.reload()
