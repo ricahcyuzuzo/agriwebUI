@@ -11,7 +11,7 @@ function ViewProduct() {
     const [searchText, setSeachText] = useState('');
 
     useEffect(() => {
-        axios.get('https://agrirwanda.eu-4.evennode.com/api/products_approved').then((res) => {
+        axios.get('https://farmatalk.herokuapp.com/api/products_approved').then((res) => {
             setProducts(res.data.data);
             console.log(res.data.data)
         })

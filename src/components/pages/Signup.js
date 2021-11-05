@@ -64,7 +64,7 @@ const Signup = () => {
                     }}>Forgot your Password?</span>
                     <Button onClick={() => {
                       setLoading(!loading);
-                      axios.post('https://agrirwanda.eu-4.evennode.com/api/login', {
+                      axios.post('https://farmatalk.herokuapp.com/api/login', {
                           phoneNumber,
                           password,
                       }).then((res) => {
@@ -105,7 +105,7 @@ const Signup = () => {
             }} />
             <Button onClick={() => {
               setLoading(!loading);
-              axios.post('https://agrirwanda.eu-4.evennode.com/api/user', {
+              axios.post('https://farmatalk.herokuapp.com/api/user', {
                   fullNames,
                   phoneNumber,
                   password,

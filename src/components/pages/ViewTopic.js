@@ -12,7 +12,7 @@ const CommentTopic = () => {
     const history = useHistory();
 
     useEffect(() => {
-        axios.get('https://agrirwanda.eu-4.evennode.com/api/one_topic', {params: {topic_id: window.localStorage.getItem('topicId')}})
+        axios.get('https://farmatalk.herokuapp.com/api/one_topic', {params: {topic_id: window.localStorage.getItem('topicId')}})
         .then((res) => {
             console.log(res.data)
             setTopic(res.data.data)
@@ -115,7 +115,7 @@ const CommentTopic = () => {
                                 <input style={{marginBottom: 10,}} type='text' className='form-control' placeholder='Names' onChange={(e) => setNames(e.target.value)} />
                                 <textarea style={{marginBottom: 10,}} className='form-control' placeholder='Your Comment' onChange={(e) => setDescription(e.target.value)} />
                                 <Button onClick={() => {
-                                    axios.post('https://agrirwanda.eu-4.evennode.com/api/comment', {
+                                    axios.post('https://farmatalk.herokuapp.com/api/comment', {
                                         names: names,
                                         message: description
                                     }, {params: {topic_id: window.localStorage.getItem('topicId')}}).then((res) => {

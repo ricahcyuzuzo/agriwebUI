@@ -16,7 +16,7 @@ const Forum = () => {
     }, [])
 
     const getData = () => {
-        axios.get('https://agrirwanda.eu-4.evennode.com/api/all_posts').then((res) => {
+        axios.get('https://farmatalk.herokuapp.com/api/all_posts').then((res) => {
             setData(res.data.data)
         }).catch((err) => {
             console.log('Error',err.response)

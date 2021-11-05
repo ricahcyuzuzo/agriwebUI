@@ -129,7 +129,7 @@ const ProfileScreen = () => {
                     formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
                     axios.post('https://api.cloudinary.com/v1_1/agri-rwanda/image/upload', formData)
                         .then(res => {
-                            axios.patch('https://agrirwanda.eu-4.evennode.com/api/profile', {
+                            axios.patch('https://farmatalk.herokuapp.com/api/profile', {
                                 idNumber: idNumber,
                                 image: res.data.secure_url,
                                 address: {

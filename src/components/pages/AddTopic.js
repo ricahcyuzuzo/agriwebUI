@@ -45,7 +45,7 @@ const AddTopic = () => {
                     }}>Description</label>
                     <textarea type='text' className='form-control' onChange={(e) => setDescription(e.target.value)}  />
                     <Button variant='success' onClick={() => {
-                        axios.post('https://agrirwanda.eu-4.evennode.com/api/post_topic', {
+                        axios.post('https://farmatalk.herokuapp.com/api/post_topic', {
                             topic: title,
                             names: names,
                             description: description

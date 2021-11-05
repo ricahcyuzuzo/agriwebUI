@@ -12,7 +12,7 @@ const ProductsScreen = () => {
     const history = useHistory();
 
     useEffect(() => {
-        axios.get('https://agrirwanda.eu-4.evennode.com/api/seller_products', {params: {phoneNumber: window.localStorage.getItem('phone')}}).then((res) => {
+        axios.get('https://farmatalk.herokuapp.com/api/seller_products', {params: {phoneNumber: window.localStorage.getItem('phone')}}).then((res) => {
             setProducts(res.data.data);
         }).catch((err) => console.log(err.response.data))
     }, [])
@@ -58,7 +58,7 @@ const ProductsScreen = () => {
                 width: 50,
                 height: 50,
             }} onClick={() => {
-                axios.delete('https://agrirwanda.eu-4.evennode.com/api/delete', {params: {product_id: item._id}}).then((res) => {
+                axios.delete('https://farmatalk.herokuapp.com/api/delete', {params: {product_id: item._id}}).then((res) => {
                     alert(res.data.message)
                     window.location.reload(false)
                 });

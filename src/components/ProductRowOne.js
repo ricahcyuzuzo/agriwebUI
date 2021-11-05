@@ -18,7 +18,7 @@ function Farmers(){
     const handleShow = () => setShow(true);
 
     const handleSend = () => {
-            axios.post('https://agrirwanda.eu-4.evennode.com/api/message', {
+            axios.post('https://farmatalk.herokuapp.com/api/message', {
                 names: names,
                 clientPhone: phone,
                 message: message
@@ -29,7 +29,7 @@ function Farmers(){
     }
 
     useEffect(() => {
-        axios.get('https://agrirwanda.eu-4.evennode.com/api/users', {params: {telephone: window.localStorage.getItem('phone')}}).then((res) => {
+        axios.get('https://farmatalk.herokuapp.com/api/users', {params: {telephone: window.localStorage.getItem('phone')}}).then((res) => {
             setData(res.data.data);
             console.log(data)
         })
