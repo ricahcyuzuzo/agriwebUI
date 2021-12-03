@@ -3,8 +3,12 @@ import { Navbar, Nav, Button} from 'react-bootstrap';
 import logo from './images/NavLogo.png';
 import '../App.css';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Navbarr() {
+    useEffect(() => {
+        console.log(window.localStorage.getItem('userType'))
+    }, [])
     return (
         <Navbar style={{
             position: 'fixed',
@@ -25,9 +29,12 @@ function Navbarr() {
                     <Nav.Link><Link to="/product" style={{paddingRight: '30px', color: 'green', paddingBottom: '10px', paddingLeft: '30px', fontFamily: 'Urbanist'}}>Product</Link></Nav.Link>                  
                     <Nav.Link><Link to="/forum" style={{paddingRight: '30px', color: 'green', paddingBottom: '10px', paddingLeft: '30px', fontFamily: 'Urbanist'}}>Forum</Link></Nav.Link>
                     <Nav.Link><Link to="/contact" style={{paddingRight: '30px', color: 'green', paddingBottom: '10px', paddingLeft: '30px', fontFamily: 'Urbanist'}}>Contact us</Link></Nav.Link>
-                    <Link to='/signup'><Button style={{
+                    {window.localStorage.getItem('userType') === 'cutomer' ? <div>{window.localStorage.getItem('names')} <Link to='/'><Button onClick={() => {
+                        window.localStorage.setItem('isLoggedIn', false);
+                        window.localStorage.setItem('userType', null);
+                    }}>Logout</Button></Link></div> : <Link to='/signup'><Button style={{
                         marginTop: 5
-                    }} variant='success'>Login / Sign Up</Button></Link>
+                    }} variant='success'>Login / Sign Up</Button></Link> }
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

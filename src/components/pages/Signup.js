@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import Navbar from '../Navbar';
 import {useHistory} from 'react-router-dom';
@@ -10,7 +10,11 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [isLogin, setIsLogin] = useState(true);
+    const [userType, setUserType] = useState('');
     
+    useEffect(() => {
+      console.log(window.localStorage.getItem('userType'))
+    })
 
     let history = useHistory();
   
@@ -64,14 +68,20 @@ const Signup = () => {
                     }}>Forgot your Password?</span>
                     <Button onClick={() => {
                       setLoading(!loading);
-                      axios.post('https://farmatalk.herokuapp.com/api/login', {
+                      axios.post('http://127.0.0.1:7000/api/login', {
                           phoneNumber,
                           password,
                       }).then((res) => {
                           window.localStorage.setItem('token', res.data.token);
                           window.localStorage.setItem('isLoggedIn', true);
-                          window.localStorage.setItem('phone', phoneNumber)
-                          history.push('/seller/home');
+                          window.localStorage.setItem('phone', phoneNumber);
+                          window.localStorage.setItem('userType', res.data.user.type);
+                          window.localStorage.setItem('names', res.data.user.name)
+                          if(res.data.user.type === 'seller'){
+                            history.push('/seller/home');
+                          }else{
+                            history.push('/');
+                          }
                       }).catch((err) => {
                         alert(err.response.data.message)
                       })
@@ -103,20 +113,32 @@ const Signup = () => {
               marginTop: 10,
               marginBottom: 10,
             }} />
+            <select className='form-control' style={{ width: '80%'}} onChange={e => setUserType(e.target.value)}>
+              <option disabled={true}>Choose usertype</option>
+              <option value="cutomer">Customer</option>
+              <option value="seller">Seller</option>
+            </select>
             <Button onClick={() => {
+              console.log(userType);
               setLoading(!loading);
-              axios.post('https://farmatalk.herokuapp.com/api/user', {
+              axios.post('http://127.0.0.1:7000/api/user', {
                   fullNames,
                   phoneNumber,
                   password,
-                  userType: 'seller'
+                  userType: userType
               }).then((res) => {
                   window.localStorage.setItem('token', res.data.token);
                   window.localStorage.setItem('isLoggedIn', true);
                   window.localStorage.setItem('phone', phoneNumber);
-                  history.push('/seller/home');
+                  window.localStorage.setItem('userType', userType);
+                  window.localStorage.setItem('names', fullNames);
+                  if (userType === 'seller'){
+                    history.push('/seller/home');
+                  } else {
+                    history.push('/')
+                  }
               }).catch((err) => {
-                alert(err.response.data.message)
+               console.log(err)
               })
             }} style={{
               marginTop: 10,
