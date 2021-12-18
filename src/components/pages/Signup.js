@@ -76,7 +76,7 @@ const Signup = () => {
                           window.localStorage.setItem('isLoggedIn', true);
                           window.localStorage.setItem('phone', phoneNumber);
                           window.localStorage.setItem('userType', res.data.user.type);
-                          window.localStorage.setItem('names', res.data.user.name)
+                          window.localStorage.setItem('names', res.data.user.name);
                           if(res.data.user.type === 'seller'){
                             history.push('/seller/home');
                           }else{

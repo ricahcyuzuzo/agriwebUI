@@ -17,6 +17,7 @@ import Forum from './components/pages/Forum';
 import AddTopic from './components/pages/AddTopic';
 import CommentTopic from './components/pages/ViewTopic';
 import MessageScreen from './components/pages/Seller/Messages';
+import Peter from './components/pages/Team/Peter';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -28,6 +29,7 @@ function App() {
         <Route path='/' exact component={Home} />
         <Route path='/product' component={ViewProduct} />
         <Route path='/farmers' component={Farmers} />
+        <Route path='/team/pierre' component={Peter} />
         <Route path='/contact' component={Contact} />
         <Route path='/signup' component={Signup} />
         <Route path='/about' component={About} />
