@@ -10,7 +10,7 @@ const MessageScreen = () => {
     let history = useHistory();
 
     useEffect(() => {
-        axios.get(' ', {params: {phone: window.localStorage.getItem('phone')}}).then((res) => {
+        axios.get('https://farmatalk.herokuapp.com/api/message/', {params: {phone: window.localStorage.getItem('phone')}}).then((res) => {
             setMessages(res.data.data);
         }).catch((err) => console.log(err.response.data))
     }, []);
@@ -22,7 +22,7 @@ const MessageScreen = () => {
                 <h1 style={{
                     fontFamily: 'Urbanist'
                 }}>Message Inbox</h1>
-                { messages.map((item, idx) =>(
+                { messages?.map((item, idx) =>(
                     <Card key={idx} style={{
                         padding: 20,
                         marginTop: 100,
