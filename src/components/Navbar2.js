@@ -13,10 +13,10 @@ function Navbarr2() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{marginTop: '30px'}} />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto" style={{paddingTop: '30px', fontFamily: 'Urbanist'}}>
-                    <Link to="/" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: 'green'}}>Home</Link>
-                    <Link to="/seller/product" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: 'green'}}>Product</Link>
-                    <Link to="/seller/profile" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: 'green'}}>Profile</Link>
-                    <Link to="/forum" style={{paddingRight: '30px', color: '#000', paddingBottom: '20px', paddingLeft: '30px', color: 'green'}}>Forum</Link>
+                    <Link to="/" style={{paddingRight: '30px', color: '#fff', paddingBottom: '20px', paddingLeft: '30px'}}>Home</Link>
+                    <Link to="/seller/product" style={{paddingRight: '30px', color: '#fff', paddingBottom: '20px', paddingLeft: '30px'}}>Product</Link>
+                    <Link to="/seller/profile" style={{paddingRight: '30px', color: '#fff', paddingBottom: '20px', paddingLeft: '30px'}}>Profile</Link>
+                    <Link to="/forum" style={{paddingRight: '30px', color: '#fff', paddingBottom: '20px', paddingLeft: '30px' }}>Forum</Link>
                     <Button>Logout</Button>
                 </Nav>
             </Navbar.Collapse>
