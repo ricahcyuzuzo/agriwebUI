@@ -9,7 +9,7 @@ function Navbarr2() {
         <Navbar expand="lg">
             <Navbar.Brand href="#home" style={{paddingLeft: '10px'}}><img src={logo} alt="Logo" style={{
                 marginTop: -15
-            }} className="logo"/><span style={{fontSize: 35, fontWeight: 'bold', color: '#000', fontFamily: 'Roboto'}}>Agri <font color="green">Web</font></span></Navbar.Brand>
+            }} className="logo"/><span style={{fontSize: 35, fontWeight: 'bold', color: '#000', fontFamily: 'Roboto'}}>Agri <font color="#fff">Web</font></span></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{marginTop: '30px'}} />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto" style={{paddingTop: '30px', fontFamily: 'Urbanist'}}>
