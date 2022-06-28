@@ -68,7 +68,7 @@ const Signup = () => {
                     }}>Forgot your Password?</span>
                     <Button onClick={() => {
                       setLoading(!loading);
-                      axios.post('http://127.0.0.1:7000/api/login', {
+                      axios.post('https://farmatalk.herokuapp.com/api/login', {
                           phoneNumber,
                           password,
                       }).then((res) => {
@@ -121,7 +121,7 @@ const Signup = () => {
             <Button onClick={() => {
               console.log(userType);
               setLoading(!loading);
-              axios.post('http://127.0.0.1:7000/api/user', {
+              axios.post('https://farmatalk.herokuapp.com/api/user', {
                   fullNames,
                   phoneNumber,
                   password,
